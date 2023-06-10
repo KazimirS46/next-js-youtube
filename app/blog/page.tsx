@@ -2,11 +2,13 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts..rrr', {
     next: {
       revalidate: 60,
     },
   });
+
+  if (!res.ok) throw new Error('Unable to fetch posts');
 
   return res.json();
 }
