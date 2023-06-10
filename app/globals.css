@@ -58,6 +58,10 @@ a:hover {
   opacity: 0.4;
 }
 
+.activeLink {
+  opacity: 0.4;
+}
+
 ul {
   width: 40vw;
   margin: 0 auto;
