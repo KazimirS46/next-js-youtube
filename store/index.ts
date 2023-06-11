@@ -16,7 +16,7 @@ export const usePosts = create<UsePosts>()((set) => ({
     const posts = await getAllPosts();
     set({ posts, loading: false });
   },
-  getPostsBySearch: async () => {
+  getPostsBySearch: async (search) => {
     set({ loading: true });
     const posts = await getPostBySearch(search);
     set({ posts, loading: false });
