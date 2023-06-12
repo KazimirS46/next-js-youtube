@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server';
-import { redirect } from 'next/navigation';
+import { headers } from 'next/dist/client/components/headers';
 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {
   const id = params.id;
 
+  const headreList = headers();
+  const type = headreList.get('Content-Type');
+
   // logic delete post
 
-  redirect('/blog');
+  return NextResponse.json({ id, type });
 }
